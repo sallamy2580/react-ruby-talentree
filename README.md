@@ -48,11 +48,11 @@
 
 - Web View
 
-![Link to Web Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628714481/TalenTree/talentree-web_zev0or.png)
+![Link to Web Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628716060/TalenTree/talentree-web_tmirom.png)
 
 - Mobile View
 
-![Link to Mobile Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628708607/TalenTree/talentree-mobile_cn4n55.png)
+![Link to Mobile Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628716060/TalenTree/talentree-mobile_xuqnoi.png)
 
 #### Component Hierarchy
 
