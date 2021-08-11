@@ -159,5 +159,5 @@ src
 | August 12 | Back-end Skeleton / Models / Seed File                   | Incomplete |
 | August 13 | Front-end Skeleton / React Screen & Component Setup      | Incomplete |
 | August 16 | Axios Requests / Data Rendering / Responsiveness         | Incomplete |
-| August 17 |                                                          | Incomplete |
+| August 17 | Post MVP / Final Touches / Debugging                     | Incomplete |
 | August 18 | Presentations                                            | Incomplete |
