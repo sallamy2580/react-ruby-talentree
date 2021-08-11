@@ -23,7 +23,7 @@
 
 ## MVP
 
-**TalenTree**'s minimum viable product will be a functioning full-stack app that has a back-end with models for students, teachers, posts, and classes (along with the connections between each entity) and a front-end that allows users to perform full CRUD (Create, Read, Update, Delete) on the server. The styling will incorporate flexbox and will be responsive so the app looks good on mobile screens as well.
+**TalenTree**'s minimum viable product will be a functioning full-stack app that has a back-end with models for students, teachers, posts, and classes (along with the connections between each entity) and a front-end that allows users to perform full CRUD (Create, Read, Update, Delete) on the server by viewing posts and creating/editing/deleting their own posts. Teachers should be able to create their own classes that the students can then register for via a connection request (see [ERD Model](#erd-model) for structure of data). The styling will incorporate flexbox and will be responsive so the app looks good on mobile screens as well.
 
 <br>
 
