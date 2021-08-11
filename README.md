@@ -7,6 +7,7 @@
     - [Wireframes](#wireframes)
     - [Component Tree](#component-tree)
     - [Component Architecture](#component-architecture)
+    - [Project Schedule](#project-schedule)
     - [Time Estimates](#time-estimates)
   - [Server (Back End)](#server-back-end)
     - [ERD Model](#erd-model)
@@ -111,6 +112,17 @@ src
 
 ```
 
+#### Project Schedule
+
+| Day       | Deliverable                                              | Status     |
+| --------- | -------------------------------------------------------- | ---------- |
+| August 11 | Brainstorming / Wireframes / Diagrams / Project Approval | Incomplete |
+| August 12 | Back-end Skeleton / Models / Seed File                   | Incomplete |
+| August 13 | Front-end Skeleton / React Screen & Component Setup      | Incomplete |
+| August 16 | Axios Requests / Data Rendering / Responsiveness         | Incomplete |
+| August 17 | Post MVP / Final Touches / Debugging                     | Incomplete |
+| August 18 | Presentations                                            | Incomplete |
+
 #### Time Estimates
 
 | Task                        | Priority | Estimated Time | Time Invested | Actual Time |
@@ -150,14 +162,3 @@ src
 - Advanced CSS
 - Animation
 - Like/Comment Functionality
-
-## Project Schedule
-
-| Day       | Deliverable                                              | Status     |
-| --------- | -------------------------------------------------------- | ---------- |
-| August 11 | Brainstorming / Wireframes / Diagrams / Project Approval | Incomplete |
-| August 12 | Back-end Skeleton / Models / Seed File                   | Incomplete |
-| August 13 | Front-end Skeleton / React Screen & Component Setup      | Incomplete |
-| August 16 | Axios Requests / Data Rendering / Responsiveness         | Incomplete |
-| August 17 | Post MVP / Final Touches / Debugging                     | Incomplete |
-| August 18 | Presentations                                            | Incomplete |
