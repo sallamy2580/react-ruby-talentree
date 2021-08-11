@@ -48,7 +48,7 @@
 
 - Web View
 
-![Link to Web Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628708607/TalenTree/talentree-web_bovupm.png)
+![Link to Web Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628714481/TalenTree/talentree-web_zev0or.png)
 
 - Mobile View
 
