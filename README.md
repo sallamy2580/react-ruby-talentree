@@ -2,10 +2,10 @@
 
 - [Overview](#overview)
 - [MVP](#mvp)
-  - [Libraries and Dependencies](#libraries-and-dependencies)
+  - [Libraries and Frameworks](#libraries-and-frameworks)
   - [Client (Front End)](#client-front-end)
     - [Wireframes](#wireframes)
-    - [Component Tree](#component-tree)
+    - [Component Hierarchy](#component-hierarchy)
     - [Component Architecture](#component-architecture)
     - [Project Schedule](#project-schedule)
     - [Time Estimates](#time-estimates)
@@ -17,7 +17,7 @@
 
 ## Overview
 
-**TalenTree** is an app that connects students or new learners of any subject with teachers around the world who are looking for students. TalenTree also allows both teachers and students to make posts and build a resume of work on their profile.
+**TalenTree** is an app that connects students or new learners of any subject with teachers around the world who are looking for students. TalenTree also allows both teachers and students to make posts and build a resume of work on their profile. Teacher accounts can create classes and students can search for classes by categories in the Browse tab to register for courses.
 
 <br>
 
@@ -27,7 +27,7 @@
 
 <br>
 
-### Libraries and Dependencies
+### Libraries and Frameworks
 
 |   Library    | Description                                                                                                                                                                                                                     |
 | :----------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -35,10 +35,10 @@
 | React Router | Library will assist in the creation of a multi-page app that doesn't require a refresh. Will allow us to partition app into different screens and incorporates a NavLink component that will assist us with our navigation bar. |
 |    Axios     | Library will allow us to make server requests from the front-end to then render and manipulate data from the database.                                                                                                          |
 
-|    Framework    | Description                                                                                                                                                                    |
-| :-------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|      Rails      | _Back-end framework to assist with the creation of database entities and modeling. Will also be running the back-end server from which the front-end will be retreiving data._ |
-| React-Bootstrap | _Front-end framework to help with responsiveness of site. Will also be used for certain pre-built components._                                                                 |
+|    Framework    | Description                                                                                                                                                                  |
+| :-------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|      Rails      | Back-end framework to assist with the creation of database entities and modeling. Will also be running the back-end server from which the front-end will be retreiving data. |
+| React-Bootstrap | Front-end framework to help with responsiveness of site. Will also be used for certain pre-built components.                                                                 |
 
 <br>
 
@@ -54,9 +54,9 @@
 
 ![Link to Mobile Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628708607/TalenTree/talentree-mobile_cn4n55.png)
 
-#### Component Tree
+#### Component Hierarchy
 
-![TalenTree Component Tree](https://res.cloudinary.com/dszox5xnw/image/upload/v1628707085/TalenTree/TalenTree_2x_inxbeg.png)
+![TalenTree Component Hierarchy](https://res.cloudinary.com/dszox5xnw/image/upload/v1628713362/TalenTree/talentree-component-hierarchy_vvaffb.png)
 
 #### Component File Structure
 
@@ -150,7 +150,7 @@ src
 
 #### ERD Model
 
-![ERD Diagram](https://res.cloudinary.com/dszox5xnw/image/upload/v1628711926/TalenTree/talentree-erd_xqyele.png)
+![ERD Diagram](https://res.cloudinary.com/dszox5xnw/image/upload/v1628713685/TalenTree/talentree-erd_thznsm.png)
 <br>
 
 ---
