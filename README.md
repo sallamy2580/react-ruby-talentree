@@ -160,7 +160,7 @@ src
 
 #### ERD Model
 
-![ERD Diagram](https://res.cloudinary.com/dszox5xnw/image/upload/v1628775907/TalenTree/talentree_lmgypa.png)
+![ERD Diagram](https://res.cloudinary.com/dszox5xnw/image/upload/v1628780714/TalenTree/talentree_1_giymxw.png)
 <br>
 
 ---
