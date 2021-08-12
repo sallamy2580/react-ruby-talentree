@@ -56,7 +56,7 @@
 
 #### Component Hierarchy
 
-![TalenTree Component Hierarchy](https://res.cloudinary.com/dszox5xnw/image/upload/v1628713362/TalenTree/talentree-component-hierarchy_vvaffb.png)
+![TalenTree Component Hierarchy](https://res.cloudinary.com/dszox5xnw/image/upload/v1628786510/TalenTree/TalenTree_2x_tlhest.png)
 
 #### Component File Structure
 
@@ -160,7 +160,7 @@ src
 
 #### ERD Model
 
-![ERD Diagram](https://res.cloudinary.com/dszox5xnw/image/upload/v1628780714/TalenTree/talentree_1_giymxw.png)
+![ERD Diagram](https://res.cloudinary.com/dszox5xnw/image/upload/v1628785950/TalenTree/talentree-erd_1_jji8m8.png)
 <br>
 
 ---
