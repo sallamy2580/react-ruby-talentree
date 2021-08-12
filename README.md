@@ -48,11 +48,11 @@
 
 - Web View
 
-![Link to Web Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628716060/TalenTree/talentree-web_tmirom.png)
+![Link to Web Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628780513/TalenTree/talentree-web-wireframes_defhu5.png)
 
 - Mobile View
 
-![Link to Mobile Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628716060/TalenTree/talentree-mobile_xuqnoi.png)
+![Link to Mobile Wireframe](https://res.cloudinary.com/dszox5xnw/image/upload/v1628780514/TalenTree/talentree-mobile-wireframes_xvccvc.png)
 
 #### Component Hierarchy
 
@@ -84,6 +84,16 @@ src
       |__ CreatePost
             |__ CreatePost.css
             |__ CreatePost.jsx
+      |__ EditPost
+            |__ EditPost.css
+            |__ EditPost.jsx
+      |__ CreateClass
+            |__ CreateClass.css
+            |__ CreateClass.jsx
+      |__ EditClass
+            |__ EditClass.css
+            |__ EditClass.jsx
+
 
 |__ components/
       |__ Header
@@ -150,7 +160,7 @@ src
 
 #### ERD Model
 
-![ERD Diagram](https://res.cloudinary.com/dszox5xnw/image/upload/v1628713685/TalenTree/talentree-erd_thznsm.png)
+![ERD Diagram](https://res.cloudinary.com/dszox5xnw/image/upload/v1628775907/TalenTree/talentree_lmgypa.png)
 <br>
 
 ---
