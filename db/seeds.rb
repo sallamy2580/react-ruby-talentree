@@ -15,6 +15,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # Student.destroy_all
+
+require 'faker'
 Post.destroy_all
 Course.destroy_all
 User.destroy_all
@@ -83,8 +85,36 @@ User.destroy_all
   user: @johnson_student
 )
 
+5.times { 
+  Post.create!(
+    user: @jimothy_teacher, 
+    course: @dance1,
+    media_url: 'https://i.ytimg.com/vi/Wr3wDQL9hOw/maxresdefault.jpg',
+    content: Faker::Lorem.paragraph
+  )
+  Post.create!(
+    user: @jenedict_teacher, 
+    course: @piano1,
+    media_url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/182FA/production/_110866099_gettyimages-905799292.jpg',
+    content: Faker::Lorem.paragraph
+  )
+  Post.create!(
+    user: @johnson_student, 
+    course: @guitar1,
+    media_url: 'https://online.berklee.edu/takenote/wp-content/uploads/2020/07/learn_acoustic_blues_guitar_article_image.jpg',
+    content: Faker::Lorem.paragraph
+  )
+  Post.create!(
+    user: @adult_student, 
+    course: @dance1,
+    media_url: 'https://i.ytimg.com/vi/Wr3wDQL9hOw/maxresdefault.jpg',
+    content: Faker::Lorem.paragraph
+  )
+}
+
 puts "#{User.count} users created!"
 puts "#{Course.count} courses created!"
+puts "#{Post.count} posts created!"
 
 # Student.destroy_all
 
