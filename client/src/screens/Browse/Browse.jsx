@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import CourseCard from "../../components/CourseCard/CourseCard";
 import Layout from "../../components/Layout/Layout";
 import { getCourses } from "../../services/courses";
+import "./Browse.css";
 
-const Browse = () => {
+const Browse = (props) => {
+  const { userData } = props;
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     const fetchCourses = async () => {
@@ -12,11 +15,12 @@ const Browse = () => {
     fetchCourses();
   }, []);
   return (
-    <Layout>
-      <h1>Browse</h1>
-      {courses?.map((course) => (
-        <h3>{course.name}</h3>
-      ))}
+    <Layout userData={userData}>
+      <section className="courses">
+        {courses?.map((course) => (
+          <CourseCard key={course.id} course={course} />
+        ))}
+      </section>
     </Layout>
   );
 };

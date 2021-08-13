@@ -14,3 +14,27 @@ export const register = async (user) => {
     return res.data.user;
   }
 };
+
+export const login = async (user) => {
+  const res = await api.post("/users/login", { user });
+  const { token } = res.data;
+  if (token) {
+    localStorage.setItem("authToken", token);
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
+    return res.data.user;
+  }
+};
+
+export const verify = async () => {
+  const token = localStorage.getItem("authToken");
+  if (token) {
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
+    const res = await api.get("/users/verify");
+    return res.data;
+  }
+};
+
+export const logout = (user) => {
+  localStorage.clear();
+  api.defaults.headers.common.authorization = null;
+};

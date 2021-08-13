@@ -8,10 +8,19 @@ import Register from "./screens/Register/Register";
 import Profile from "./screens/Profile/Profile";
 import TeacherProfile from "./screens/TeacherProfile/TeacherProfile";
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { verify } from "./services/users";
 
 function App() {
   const [userData, setUserData] = useState({});
+  useEffect(() => {
+    const reverify = async () => {
+      const currUser = await verify();
+      console.log(currUser);
+      setUserData(currUser);
+    };
+    reverify();
+  }, []);
   return (
     <div className="App">
       <Switch>

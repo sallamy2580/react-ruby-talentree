@@ -3,7 +3,8 @@ import Layout from "../../components/Layout/Layout";
 import Post from "../../components/Post/Post";
 import { getPosts } from "../../services/posts";
 import "./Home.css";
-const Home = () => {
+const Home = (props) => {
+  const { userData } = props;
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
@@ -13,7 +14,7 @@ const Home = () => {
     fetchPosts();
   }, []);
   return (
-    <Layout>
+    <Layout userData={userData}>
       <section className="posts">
         {posts.map((post) => (
           <Post key={post.id} post={post} />

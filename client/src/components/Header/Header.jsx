@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
-const Header = () => {
+const Header = (props) => {
+  const { userData } = props;
   return (
     <header>
       <section>
@@ -11,6 +12,11 @@ const Header = () => {
           />
           TalenTree
         </h1>
+        <Link to="/profile">
+          <img src={userData?.img_url} alt={userData?.username} />
+          <h3>{userData?.username}</h3>
+          <h5>{userData?.is_teacher ? "TEACHER" : "STUDENT"}</h5>
+        </Link>
       </section>
       <nav>
         <NavLink exact activeClassName="active" className="nav-link" to="/">

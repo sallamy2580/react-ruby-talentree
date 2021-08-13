@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { login } from "../../services/users";
 import "./LogIn.css";
-const LogIn = () => {
+const LogIn = ({ setUserData }) => {
+  const history = useHistory();
+
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -17,13 +20,24 @@ const LogIn = () => {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const createUser = async () => {
+      const newUser = await login(user);
+      setUserData(newUser);
+      setTimeout(() => {
+        history.push("/");
+      }, 500);
+    };
+    createUser();
+  };
   return (
     <div className="login-register">
       <section className="login-register-heading">
         <h1>TalenTree</h1>
         <h5>Where leaders create leaders</h5>
       </section>
-      <form className="login-register-form">
+      <form className="login-register-form" onSubmit={handleSubmit}>
         <h2>Log In</h2>
         <label htmlFor="email">Email</label>
         <input
