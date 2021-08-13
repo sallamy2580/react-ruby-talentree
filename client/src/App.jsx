@@ -8,19 +8,37 @@ import Register from "./screens/Register/Register";
 import Profile from "./screens/Profile/Profile";
 import TeacherProfile from "./screens/TeacherProfile/TeacherProfile";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [userData, setUserData] = useState({});
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/browse" component={Browse} />
-        <Route path="/new" component={CreatePost} />
-        <Route path="/edit" component={EditPost} />
-        <Route path="/login" component={LogIn} />
-        <Route path="/register" component={Register} />
-        <Route path="/profile" component={Profile} />
-        <Route path="/teacher/:id" component={TeacherProfile} />
+        <Route exact path="/">
+          <Home userData={userData} />
+        </Route>
+        <Route path="/browse">
+          <Browse />
+        </Route>
+        <Route path="/new">
+          <CreatePost userData={userData} />
+        </Route>
+        <Route path="/edit">
+          <EditPost />
+        </Route>
+        <Route path="/login">
+          <LogIn setUserData={setUserData} />
+        </Route>
+        <Route path="/register">
+          <Register setUserData={setUserData} />
+        </Route>
+        <Route path="/profile">
+          <Profile userData={userData} />
+        </Route>
+        <Route path="/teacher/:id">
+          <TeacherProfile userData={userData} />
+        </Route>
       </Switch>
     </div>
   );

@@ -35,6 +35,10 @@
 .login-register-form button {
   font-size: 1.5rem;
 }
+.login-register-form p {
+  margin-top: 5px;
+  text-align: center;
+}
 
 .buttons {
   display: flex;
@@ -64,4 +68,12 @@
 
 .teacher-btn {
   background-color: #aa968a;
+}
+
+.btn-selected {
+  border: 2px solid white;
+}
+
+.login-register-link {
+  color: #aa968a;
 }

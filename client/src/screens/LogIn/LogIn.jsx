@@ -1,5 +1,22 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./LogIn.css";
 const LogIn = () => {
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+    is_teacher: false,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({
+      ...user,
+      [name]: value,
+    });
+  };
+
   return (
     <div className="login-register">
       <section className="login-register-heading">
@@ -7,24 +24,30 @@ const LogIn = () => {
         <h5>Where leaders create leaders</h5>
       </section>
       <form className="login-register-form">
-        <h2>Register</h2>
-        <label htmlFor="username">Username</label>
-        <input type="text" name="username" id="username" />
+        <h2>Log In</h2>
         <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value={user.email}
+          onChange={handleChange}
+        />
         <label htmlFor="password">Password</label>
-        <input type="password" name="password" id="password" />
-        <div className="buttons">
-          <button className="student-btn">
-            <img src="img/BranchOutline.png" alt="Talentree Student Logo" />{" "}
-            Student
-          </button>
-          <button className="teacher-btn">
-            <img src="img/TreeOutline.png" alt="Talentree Student Logo" />{" "}
-            Teacher
-          </button>
-        </div>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          value={user.password}
+          onChange={handleChange}
+        />
         <button type="submit">Submit</button>
+        <p>
+          Don't have an account?{" "}
+          <Link className="login-register-link" to="/register">
+            Register now!
+          </Link>
+        </p>
       </form>
     </div>
   );
