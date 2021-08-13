@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout";
+import Post from "../../components/Post/Post";
 import { getPosts } from "../../services/posts";
 import "./Home.css";
 const Home = () => {
@@ -13,13 +14,9 @@ const Home = () => {
   }, []);
   return (
     <Layout>
-      <h1>Home</h1>
       <section className="posts">
         {posts.map((post) => (
-          <div className="post" key={post.id}>
-            <img src={post.media_url} alt={post.id.toString()} />
-            <p>{post.content}</p>
-          </div>
+          <Post post={post} />
         ))}
       </section>
     </Layout>

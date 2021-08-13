@@ -3,16 +3,3 @@
   flex-flow: row wrap;
   justify-content: space-evenly;
 }
-
-.post {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  margin: 20px;
-  padding: 20px;
-  background-color: beige;
-}
-
-.post > img {
-  width: 100%;
-}

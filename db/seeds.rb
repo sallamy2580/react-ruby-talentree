@@ -26,7 +26,7 @@ User.destroy_all
   email: 'jimoth@aol.com',
   bio: 'I just love Juicy Drop Pops.',
   img_url: 'https://i.pinimg.com/originals/98/60/73/9860734188ab14fcbb16e72f5dd2ad86.jpg',
-  password_digest: 'shrimp',
+  password: 'shrimp_and_moolah',
   is_teacher: true
 )
 
@@ -35,7 +35,7 @@ User.destroy_all
   email: 'jenedict@yahoo.com',
   bio: 'I go well with eggs',
   img_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cobra-k-1526581667.jpg?resize=480:*',
-  password_digest: 'eggsbenedict',
+  password: 'eggsbenedict_and_moolah',
   is_teacher: true
 )
 
@@ -44,7 +44,7 @@ User.destroy_all
   email: 'johnson@john.son',
   bio: 'I just love Juicy Drop Pops.',
   img_url: 'https://www.indiewire.com/wp-content/uploads/2018/06/02_CobraKai.jpg?w=780',
-  password_digest: 'checkyourjohnson',
+  password: 'checkyourjohnson_and_moolah',
   is_teacher: false
 )
 
@@ -53,7 +53,7 @@ User.destroy_all
   email: 'adult@facebook.edu',
   bio: 'I think I am the most adultest adult to be honest.',
   img_url: 'https://costumewall.com/wp-content/uploads/2018/10/mr-miyagi.jpg',
-  password_digest: 'adultperson',
+  password: 'adultperson_and_moolah',
   is_teacher: false
 )
 

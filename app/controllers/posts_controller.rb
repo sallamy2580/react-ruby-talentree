@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
+  before_action :authorize_request, only: [:create, :update, :destroy]
   before_action :set_post, only: [:show, :update, :destroy]
 
   # GET /posts
   def index
     @posts = Post.all
-
-    render json: @posts
+    render json: @posts, include: [:user, :course]
   end
 
   # GET /posts/1

@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+  before_action :authorize_request, only: [:create, :update, :destroy]
   before_action :set_course, only: [:show, :update, :destroy]
 
   # GET /courses
