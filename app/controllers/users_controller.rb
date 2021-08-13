@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorize_request, only: [:verify]
-  before_action :set_user, only: [:show, :update]
+  before_action :set_user, only: [:show]
   # GET /users
   def index
     @users = User.select(:id,:username, :email, :bio, :img_url, :is_teacher)
@@ -69,9 +69,9 @@ class UsersController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:username, :email, :bio, :img_url, :password_digest, :is_teacher)
-    end
+    # def user_params
+    #   params.require(:user).permit(:username, :email, :bio, :img_url, :password_digest, :is_teacher)
+    # end
 
     def user_register_params
       params.require(:user).permit(:username, :email, :password,:is_teacher)
