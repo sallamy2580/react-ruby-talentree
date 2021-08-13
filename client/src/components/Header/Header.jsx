@@ -12,10 +12,12 @@ const Header = (props) => {
           />
           TalenTree
         </h1>
-        <Link to="/profile">
+        <Link className="profile-link" to="/profile">
           <img src={userData?.img_url} alt={userData?.username} />
-          <h3>{userData?.username}</h3>
-          <h5>{userData?.is_teacher ? "TEACHER" : "STUDENT"}</h5>
+          <div className="profile-link-text">
+            <h3>{userData?.username}</h3>
+            <h5>{userData?.is_teacher ? "TEACHER" : "STUDENT"}</h5>
+          </div>
         </Link>
       </section>
       <nav>

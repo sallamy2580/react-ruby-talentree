@@ -37,3 +37,31 @@ header > nav {
 .active {
   border-bottom: 7px solid #4b7f52;
 }
+
+.profile-link {
+  display: flex;
+  color: white;
+  border-radius: 70px;
+  align-items: center;
+  padding: 10px;
+  transition: all 0.5s ease-out;
+}
+.profile-link-text h3 {
+  font-size: 1.5rem;
+}
+.profile-link-text h5 {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.profile-link img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 100px;
+  margin-right: 10px;
+}
+
+.profile-link:hover {
+  background-color: rgba(0, 0, 0, 0.277);
+}
