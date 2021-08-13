@@ -1,7 +1,16 @@
+import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { verify } from "../../services/users";
 import "./Header.css";
-const Header = (props) => {
-  const { userData } = props;
+const Header = () => {
+  const [userData, setUserData] = useState({});
+  useEffect(() => {
+    const reverify = async () => {
+      const currUser = await verify();
+      setUserData(currUser);
+    };
+    reverify();
+  }, []);
   return (
     <header>
       <section>
