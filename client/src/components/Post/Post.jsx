@@ -1,7 +1,7 @@
 import "./Post.css";
 
-const Post = ({ post }) => {
-  const { media_url, content, user, course, created_at } = post;
+const Post = ({ post, userId }) => {
+  const { media_url, content, user, course, created_at, user_id } = post;
   const dateCreated = new Date(created_at).toString();
   const dateArray = dateCreated.split(" ").splice(0, 5);
   dateArray[4] = dateArray[4].slice(0, 5);
@@ -21,6 +21,19 @@ const Post = ({ post }) => {
       </div>
       <p>{content}</p>
       <img src={media_url} alt={user?.username} />
+      <div className="buttons">
+        {user_id === userId ? (
+          <>
+            <button>Edit</button>
+            <button>Delete</button>
+          </>
+        ) : (
+          <>
+            <button>Like</button>
+            <button>Comment</button>
+          </>
+        )}
+      </div>
     </article>
   );
 };

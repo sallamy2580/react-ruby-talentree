@@ -2,4 +2,24 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
+  align-items: center;
+}
+
+.new-post-link {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  background-color: #4b7f52;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 20px;
+  line-height: 0;
+  border-radius: 60px;
+  transition: all 0.5s ease-out;
+}
+
+.new-post-link:hover {
+  background-color: #c6f2ab;
+  color: black;
 }

@@ -3,10 +3,10 @@
   flex-direction: column;
   width: 600px;
   margin: 20px;
-  padding: 20px;
   background-color: #4b7f52;
   color: white;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .post > img {
@@ -14,15 +14,18 @@
   width: 100%;
   object-fit: cover;
   border-radius: 6px;
+  padding: 0 20px 20px;
 }
 .post > p {
   font-weight: bold;
   margin: 20px 0;
   font-size: 1.2rem;
+  padding: 0 25px;
 }
 .post-header {
   display: flex;
   align-items: center;
+  padding: 20px 20px 0;
 }
 
 .post-header-text {

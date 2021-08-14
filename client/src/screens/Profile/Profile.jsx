@@ -34,7 +34,7 @@ const Profile = ({ userData }) => {
       <section className="user-posts">
         <h2>POSTS</h2>
         {userPosts?.map((post) => (
-          <Post key={post.id} post={post} />
+          <Post key={post.id} post={post} userId={userData?.id} />
         ))}
       </section>
     </main>
