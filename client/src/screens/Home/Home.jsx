@@ -3,7 +3,6 @@ import Post from "../../components/Post/Post";
 import { getPosts } from "../../services/posts";
 import "./Home.css";
 const Home = (props) => {
-  const { userData } = props;
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
@@ -13,13 +12,13 @@ const Home = (props) => {
     fetchPosts();
   }, []);
   return (
-    <div userData={userData}>
+    <main>
       <section className="posts">
         {posts.map((post) => (
           <Post key={post.id} post={post} />
         ))}
       </section>
-    </div>
+    </main>
   );
 };
 

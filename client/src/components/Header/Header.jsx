@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { verify } from "../../services/users";
 import "./Header.css";
 const Header = () => {
@@ -21,19 +21,23 @@ const Header = () => {
           />
           TalenTree
         </h1>
-        <Link className="profile-link" to="/profile">
+        <NavLink
+          activeClassName="active-profile"
+          className="profile-link"
+          to="/profile"
+        >
           <img src={userData?.img_url} alt={userData?.username} />
           <div className="profile-link-text">
             <h3>{userData?.username}</h3>
             <h5>{userData?.is_teacher ? "TEACHER" : "STUDENT"}</h5>
           </div>
-        </Link>
+        </NavLink>
       </section>
       <nav>
-        <NavLink exact activeClassName="active" className="nav-link" to="/">
+        <NavLink exact className="nav-link" to="/">
           Home
         </NavLink>
-        <NavLink activeClassName="active" className="nav-link" to="/browse">
+        <NavLink className="nav-link" to="/browse">
           Browse
         </NavLink>
       </nav>

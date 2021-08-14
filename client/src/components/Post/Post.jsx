@@ -20,7 +20,7 @@ const Post = ({ post }) => {
         </div>
       </div>
       <p>{content}</p>
-      <img src={media_url} alt={user.username} />
+      <img src={media_url} alt={user?.username} />
     </article>
   );
 };

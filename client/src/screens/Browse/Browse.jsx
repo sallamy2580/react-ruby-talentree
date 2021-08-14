@@ -4,7 +4,6 @@ import { getCourses } from "../../services/courses";
 import "./Browse.css";
 
 const Browse = (props) => {
-  const { userData } = props;
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     const fetchCourses = async () => {
@@ -14,13 +13,13 @@ const Browse = (props) => {
     fetchCourses();
   }, []);
   return (
-    <div userData={userData}>
+    <main>
       <section className="courses">
         {courses?.map((course) => (
           <CourseCard key={course.id} course={course} />
         ))}
       </section>
-    </div>
+    </main>
   );
 };
 

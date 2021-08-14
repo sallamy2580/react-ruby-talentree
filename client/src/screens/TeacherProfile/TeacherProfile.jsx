@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Layout from "../../components/Layout/Layout";
 import { getUser } from "../../services/users";
 const TeacherProfile = () => {
   const params = useParams();
@@ -14,7 +13,7 @@ const TeacherProfile = () => {
   }, [params.id]);
 
   return (
-    <Layout>
+    <main>
       <h2>{user?.username}</h2>
       <p>{user?.bio}</p>
       <img src={user?.img_url} alt={user?.username} />
@@ -26,7 +25,7 @@ const TeacherProfile = () => {
           </div>
         ))}
       </section>
-    </Layout>
+    </main>
   );
 };
 

@@ -38,6 +38,9 @@ header > nav {
   border-bottom: 7px solid #4b7f52;
 }
 
+.active-profile {
+  background-color: rgba(0, 0, 0, 0.277);
+}
 .profile-link {
   display: flex;
   color: white;

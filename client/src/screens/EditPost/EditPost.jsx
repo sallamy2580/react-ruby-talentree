@@ -1,5 +1,5 @@
 const EditPost = () => {
-  return <div></div>;
+  return <main></main>;
 };
 
 export default EditPost;
