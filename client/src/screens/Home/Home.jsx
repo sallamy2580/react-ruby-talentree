@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Layout from "../../components/Layout/Layout";
 import Post from "../../components/Post/Post";
 import { getPosts } from "../../services/posts";
 import "./Home.css";
@@ -14,13 +13,13 @@ const Home = (props) => {
     fetchPosts();
   }, []);
   return (
-    <Layout userData={userData}>
+    <div userData={userData}>
       <section className="posts">
         {posts.map((post) => (
           <Post key={post.id} post={post} />
         ))}
       </section>
-    </Layout>
+    </div>
   );
 };
 

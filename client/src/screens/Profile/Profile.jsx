@@ -1,9 +1,8 @@
-import Layout from "../../components/Layout/Layout";
 import Post from "../../components/Post/Post";
 
 const Profile = ({ userData }) => {
   return (
-    <Layout>
+    <div>
       <h2>{userData?.username}</h2>
       <h4>{userData?.email}</h4>
       <p>{userData?.bio}</p>
@@ -12,7 +11,7 @@ const Profile = ({ userData }) => {
           <Post key={post.id} post={post} />
         ))}
       </section>
-    </Layout>
+    </div>
   );
 };
 

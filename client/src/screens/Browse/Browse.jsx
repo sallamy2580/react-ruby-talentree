@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import CourseCard from "../../components/CourseCard/CourseCard";
-import Layout from "../../components/Layout/Layout";
 import { getCourses } from "../../services/courses";
 import "./Browse.css";
 
@@ -15,13 +14,13 @@ const Browse = (props) => {
     fetchCourses();
   }, []);
   return (
-    <Layout userData={userData}>
+    <div userData={userData}>
       <section className="courses">
         {courses?.map((course) => (
           <CourseCard key={course.id} course={course} />
         ))}
       </section>
-    </Layout>
+    </div>
   );
 };
 
