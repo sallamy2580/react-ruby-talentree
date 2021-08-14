@@ -1,11 +1,15 @@
+import { deletePost } from "../../services/posts";
 import "./Post.css";
 
 const Post = ({ post, userId }) => {
-  const { media_url, content, user, course, created_at, user_id } = post;
+  const { media_url, content, user, course, created_at, user_id, id } = post;
   const dateCreated = new Date(created_at).toString();
   const dateArray = dateCreated.split(" ").splice(0, 5);
   dateArray[4] = dateArray[4].slice(0, 5);
   const displayDate = `${dateArray[0]}, ${dateArray[1]} ${dateArray[2]}, ${dateArray[3]} at ${dateArray[4]}`;
+  const handleClick = async () => {
+    await deletePost(id);
+  };
   return (
     <article className="post">
       <div className="post-header">
@@ -25,13 +29,10 @@ const Post = ({ post, userId }) => {
         {user_id === userId ? (
           <>
             <button>Edit</button>
-            <button>Delete</button>
+            <button onClick={handleClick}>Delete</button>
           </>
         ) : (
-          <>
-            <button>Like</button>
-            <button>Comment</button>
-          </>
+          <></>
         )}
       </div>
     </article>
