@@ -45,3 +45,50 @@
   object-fit: cover;
   border-radius: 50px;
 }
+
+.delete-confirm {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.763);
+  top: 0px;
+  left: 0px;
+}
+
+.delete-box {
+  background-color: #4b7f52;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 7px;
+}
+
+.delete-buttons {
+  margin-top: 5px;
+}
+
+.delete-buttons > button {
+  font-size: 1.5rem;
+  margin: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #aa968a;
+  color: white;
+  font-weight: bold;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.delete-buttons > button:hover {
+  background-color: #aa968ac8;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
