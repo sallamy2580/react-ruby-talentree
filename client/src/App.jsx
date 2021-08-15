@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import LogIn from "./screens/LogIn/LogIn";
 import Register from "./screens/Register/Register";
 import "./App.css";
@@ -7,16 +7,21 @@ import { verify } from "./services/users";
 import Main from "./components/Main/Main";
 
 function App() {
+  const [authorized, setAuthorized] = useState(null);
   const [userData, setUserData] = useState({});
   useEffect(() => {
     const reverify = async () => {
-      const currUser = await verify();
-      console.log(currUser);
-      setUserData(currUser);
+      try {
+        const currUser = await verify();
+        setUserData(currUser);
+        return true;
+      } catch (error) {
+        return false;
+      }
     };
-    reverify();
+    setAuthorized(reverify());
   }, []);
-  return (
+  return authorized ? (
     <div className="App">
       <Switch>
         <Route exact path="/login">
@@ -30,6 +35,8 @@ function App() {
         </Route>
       </Switch>
     </div>
+  ) : (
+    <Redirect to="/login" />
   );
 }
 

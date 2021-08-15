@@ -41,7 +41,9 @@
   padding: 5px;
   min-height: 10rem;
 }
-
+.buttons * {
+  color: white;
+}
 .buttons > button {
   font-size: 1.5rem;
   box-sizing: content-box;
@@ -54,6 +56,6 @@
   padding: 10px 0;
   border-top: 1px solid white;
 }
-.buttons :first-child {
+.buttons > :first-child {
   border-right: 1px solid white;
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { deletePost } from "../../services/posts";
 import "./Post.css";
 
@@ -43,7 +44,9 @@ const Post = ({ post, userId, setToggleFetch }) => {
         <div className="buttons">
           {user_id === userId ? (
             <>
-              <button>Edit</button>
+              <button>
+                <Link to="/edit">Edit</Link>
+              </button>
               <button onClick={toggleDelete}>Delete</button>
             </>
           ) : (

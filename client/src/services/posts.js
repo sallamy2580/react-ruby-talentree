@@ -15,6 +15,11 @@ export const createPost = async (post) => {
   return res.data;
 };
 
+export const editPost = async (id, post) => {
+  const res = await api.put(`/posts/${id}`, { post });
+  return res.data;
+};
+
 export const deletePost = async (id) => {
   await api.delete(`/posts/${id}`);
 };
