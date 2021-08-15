@@ -6,18 +6,24 @@ import { getPosts } from "../../services/posts";
 import "./Home.css";
 const Home = ({ userData }) => {
   const [posts, setPosts] = useState([]);
+  const [toggleFetch, setToggleFetch] = useState(true);
   useEffect(() => {
     const fetchPosts = async () => {
       const data = await getPosts();
       setPosts(data);
     };
     fetchPosts();
-  }, []);
+  }, [toggleFetch]);
   return (
     <main id="home">
       <section className="posts">
         {posts.map((post) => (
-          <Post key={post.id} post={post} userId={userData.id} />
+          <Post
+            key={post.id}
+            post={post}
+            userId={userData.id}
+            setToggleFetch={setToggleFetch}
+          />
         ))}
       </section>
       <Link className="new-post-link" to="/new">

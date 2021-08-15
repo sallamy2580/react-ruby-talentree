@@ -2,7 +2,7 @@ import { useState } from "react";
 import { deletePost } from "../../services/posts";
 import "./Post.css";
 
-const Post = ({ post, userId }) => {
+const Post = ({ post, userId, setToggleFetch }) => {
   const { media_url, content, user, course, created_at, user_id, id } = post;
 
   const [showDelete, setShowDelete] = useState(false);
@@ -18,6 +18,10 @@ const Post = ({ post, userId }) => {
 
   const handleClick = async () => {
     await deletePost(id);
+    setToggleFetch((curr) => !curr);
+    setTimeout(() => {
+      toggleDelete();
+    }, 500);
   };
 
   return (

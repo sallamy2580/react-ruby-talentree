@@ -82,6 +82,7 @@
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
+
 .delete-buttons > button:hover {
   background-color: #aa968ac8;
 }
