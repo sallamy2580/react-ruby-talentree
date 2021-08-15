@@ -34,7 +34,7 @@ export const verify = async () => {
   }
 };
 
-export const logout = (user) => {
+export const logOut = () => {
   localStorage.clear();
   api.defaults.headers.common.authorization = null;
 };

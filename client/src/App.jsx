@@ -5,6 +5,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { verify } from "./services/users";
 import Main from "./components/Main/Main";
+import LogOut from "./screens/LogOut/LogOut";
 
 function App() {
   const [authorized, setAuthorized] = useState(null);
@@ -29,6 +30,9 @@ function App() {
         </Route>
         <Route exact path="/register">
           <Register setUserData={setUserData} />
+        </Route>
+        <Route exact path="/logout">
+          <LogOut />
         </Route>
         <Route>
           <Main userData={userData} />
