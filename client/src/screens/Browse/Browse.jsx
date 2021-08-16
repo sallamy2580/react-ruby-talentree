@@ -31,11 +31,11 @@ const Browse = (props) => {
         teachers={teachers}
       />
       <section className="courses">
-        {displayArray?.map((card) =>
+        {displayArray?.map((card, index) =>
           courses.includes(card) ? (
-            <CourseCard key={card.id} course={card} />
+            <CourseCard key={index} course={card} />
           ) : (
-            <TeacherCard key={card.id} teacher={card} />
+            <TeacherCard key={index} teacher={card} />
           )
         )}
       </section>

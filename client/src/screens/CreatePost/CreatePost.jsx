@@ -4,8 +4,7 @@ import { getCourses } from "../../services/courses";
 import { createPost } from "../../services/posts";
 import "./CreatePost.css";
 
-const CreatePost = (props) => {
-  const { userData } = props;
+const CreatePost = ({ userData }) => {
   const [courses, setCourses] = useState([]);
   const history = useHistory();
 

@@ -46,13 +46,15 @@ const Home = ({ userData }) => {
       <div className={`show-options${showOptions ? " show" : ""}`}>
         <div className="options-box">
           <div className="options-links">
-            <Link to="/new">
+            <Link to="/teacher/new">
               {" "}
-              <HiOutlineUserGroup /> Class
+              <HiOutlineUserGroup />
+              &nbsp;Course
             </Link>
             <Link to="/new">
               {" "}
-              <BsPencilSquare /> Post
+              <BsPencilSquare />
+              &nbsp;Post
             </Link>
           </div>
           <button className="cancel-button" onClick={handleClick}>

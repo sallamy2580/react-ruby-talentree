@@ -6,6 +6,7 @@ import EditPost from "../../screens/EditPost/EditPost";
 import Profile from "../../screens/Profile/Profile";
 import TeacherProfile from "../../screens/TeacherProfile/TeacherProfile";
 import Layout from "../Layout/Layout";
+import CreateCourse from "../../screens/CreateCourse/CreateCourse";
 
 const Main = ({ userData }) => {
   if (typeof userData === "undefined") {
@@ -30,6 +31,9 @@ const Main = ({ userData }) => {
           </Route>
           <Route exact path="/profile">
             <Profile userData={userData} />
+          </Route>
+          <Route exact path="/teacher/new">
+            <CreateCourse userData={userData} />
           </Route>
           <Route path="/teacher/:id">
             <TeacherProfile userData={userData} />

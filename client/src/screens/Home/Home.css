@@ -69,6 +69,7 @@
 
 .cancel-button {
   background-color: black;
+  font-weight: normal;
 }
 
 .options-links > *:hover {
