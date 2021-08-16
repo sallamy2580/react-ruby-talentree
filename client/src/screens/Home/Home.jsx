@@ -19,9 +19,9 @@ const Home = ({ userData }) => {
       <section className="posts">
         {posts.map((post) => (
           <Post
-            key={post.id}
+            key={post?.id}
             post={post}
-            userId={userData.id}
+            userId={userData?.id}
             setToggleFetch={setToggleFetch}
           />
         ))}
