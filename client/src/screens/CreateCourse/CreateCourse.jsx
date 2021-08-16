@@ -1,40 +1,41 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { getCourses } from "../../services/courses";
-import { createPost } from "../../services/posts";
+import { createCourse } from "../../services/courses";
 import "./CreateCourse.css";
 
 const CreateCourse = ({ userData }) => {
-  const [courses, setCourses] = useState([]);
   const history = useHistory();
 
-  const today = new Date();
+  let today = new Date();
   let tomorrow = new Date();
   tomorrow.setDate(today.getDate() + 1);
+  today = today.toISOString().slice(0, 10);
+  tomorrow = tomorrow.toISOString().slice(0, 10);
 
   const [course, setCourse] = useState({
     name: "",
     description: "",
     category: "",
-    start_date: today.toJSON(),
-    end_date: tomorrow.toJSON(),
+    start_date: today,
+    end_date: tomorrow,
     teacher_id: userData.id,
+    student_id: null,
   });
 
-  useEffect(() => {
-    const fetchCourses = async () => {
-      const data = await getCourses();
-      setCourses(data);
-    };
-    fetchCourses();
-  }, []);
+  // useEffect(() => {
+  //   const fetchCourses = async () => {
+  //     const data = await getCourses();
+  //     setCourses(data);
+  //   };
+  //   fetchCourses();
+  // }, []);
 
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
     setCourse({
       ...course,
-      [name]: name === "course_id" ? parseInt(value) : value,
+      [name]: value,
     });
   };
 
@@ -44,11 +45,12 @@ const CreateCourse = ({ userData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createPost(course);
+    await createCourse(course);
     setTimeout(() => {
-      history.push("/");
+      history.push("/browse");
     }, 500);
   };
+
   return (
     <main id="create-course">
       <form className="create-course-form" onSubmit={handleSubmit}>
@@ -78,7 +80,7 @@ const CreateCourse = ({ userData }) => {
         />
         <label htmlFor="start-date">Start Date</label>
         <input
-          type="datetime-local"
+          type="date"
           name="start_date"
           id="start-date"
           value={course.start_date}
@@ -86,10 +88,10 @@ const CreateCourse = ({ userData }) => {
         />
         <label htmlFor="end-date">End Date</label>
         <input
-          type="datetime-local"
+          type="date"
           name="end_date"
           id="end-date"
-          value={course.media_url}
+          value={course.end_date}
           onChange={handleChange}
         />
 

@@ -6,12 +6,12 @@ class CoursesController < ApplicationController
   def index
     @courses = Course.all
 
-    render json: @courses, include: [:teacher,:student]
+    render json: @courses, include: :teacher
   end
 
   # GET /courses/1
   def show
-    render json: @course, include: [:teacher,:student]
+    render json: @course, include: :teacher
   end
 
   # POST /courses
@@ -47,6 +47,6 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:name, :description, :category, :start_date, :end_date, :user_id)
+      params.require(:course).permit(:name, :description, :category, :start_date, :end_date, :teacher_id, :student_id)
     end
 end
