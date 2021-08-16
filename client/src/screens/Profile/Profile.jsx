@@ -5,6 +5,7 @@ import "./Profile.css";
 
 const Profile = ({ userData }) => {
   const [userPosts, setUserPosts] = useState([]);
+  const [toggleFetch, setToggleFetch] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
       const data = await getPosts();
@@ -12,7 +13,7 @@ const Profile = ({ userData }) => {
       setUserPosts(newPosts);
     };
     fetchPosts();
-  }, [userData.id]);
+  }, [userData.id, toggleFetch]);
   return (
     <main id="profile">
       <section className="user-info">
@@ -21,7 +22,7 @@ const Profile = ({ userData }) => {
         </div>
         <div className="user-info-text">
           <div className="user-info-header">
-            <h2>{userData?.username.toUpperCase()}</h2>
+            <h2>{userData?.username?.toUpperCase()}</h2>
             <h4>{userData?.is_teacher ? "Teacher" : "Student"}</h4>
           </div>
           <p>{userData?.bio}</p>
@@ -34,7 +35,12 @@ const Profile = ({ userData }) => {
       <section className="user-posts">
         <h2>POSTS</h2>
         {userPosts?.map((post) => (
-          <Post key={post.id} post={post} userId={userData?.id} />
+          <Post
+            key={post.id}
+            post={post}
+            userId={userData?.id}
+            setToggleFetch={setToggleFetch}
+          />
         ))}
       </section>
     </main>

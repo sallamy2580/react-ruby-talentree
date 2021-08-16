@@ -21,8 +21,8 @@ const Main = ({ userData }) => {
           <Route exact path="/new">
             <CreatePost userData={userData} />
           </Route>
-          <Route exact path="/edit">
-            <EditPost />
+          <Route path="/edit/:id">
+            <EditPost userData={userData} />
           </Route>
           <Route exact path="/profile">
             <Profile userData={userData} />

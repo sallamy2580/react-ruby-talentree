@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { register } from "../../services/users";
+import "./Register.css";
 const Register = (props) => {
   const { setUserData } = props;
   const history = useHistory();
@@ -80,7 +81,7 @@ const Register = (props) => {
           value={user.password}
           onChange={handleChange}
         />
-        <div className="buttons">
+        <div className="register-buttons">
           <button
             className={`student-btn${user.is_teacher ? "" : " btn-selected"}`}
             onClick={handleClick}

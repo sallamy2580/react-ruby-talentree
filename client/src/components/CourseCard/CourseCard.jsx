@@ -1,10 +1,10 @@
 import "./CourseCard.css";
 const CourseCard = ({ course }) => {
-  const { name, taught_by, description } = course;
+  const { name, teacher, description } = course;
   return (
     <article className="course">
-      <h1>{name}</h1>
-      <h3>{taught_by}</h3>
+      <h2>{name}</h2>
+      <h3>{teacher.username}</h3>
       <p>{description}</p>
     </article>
   );

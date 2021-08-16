@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :courses
   post "/users/login", to: "users#login"
   get "/users/verify", to: "users#verify"
+  get "/teachers", to: "users#teachers"
   resources :users, only: [:index, :show, :create]
   
   

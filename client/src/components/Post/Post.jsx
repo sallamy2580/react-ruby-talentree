@@ -41,11 +41,11 @@ const Post = ({ post, userId, setToggleFetch }) => {
         </div>
         <p>{content}</p>
         <img src={media_url} alt={user?.username} />
-        <div className="buttons">
+        <div className="post-buttons">
           {user_id === userId ? (
             <>
               <button>
-                <Link to="/edit">Edit</Link>
+                <Link to={`/edit/${id}`}>Edit</Link>
               </button>
               <button onClick={toggleDelete}>Delete</button>
             </>

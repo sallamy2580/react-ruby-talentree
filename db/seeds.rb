@@ -31,11 +31,11 @@ User.destroy_all
 )
 
 @jenedict_teacher = User.create!(
-  username: 'jenedictarnold',
+  username: 'jenedictcumberbatch',
   email: 'jenedict@yahoo.com',
   bio: 'I go well with eggs',
   img_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cobra-k-1526581667.jpg?resize=480:*',
-  password: 'eggsbenedict_and_moolah',
+  password: 'eggsjenedict_and_moolah',
   is_teacher: true
 )
 
@@ -61,28 +61,28 @@ User.destroy_all
   name: 'Dance 101',
   description: 'Learn about dance and the choreography process.',
   category: 'Dance',
-  taught_by: 'Jenedict',
   start_date: Date.today,
   end_date: Date.tomorrow,
-  user: @adult_student
+  teacher: @jenedict_teacher,
+  student: @adult_student
 )
 @piano1 = Course.create!(
   name: 'Piano 101',
   description: 'Learn about piano technique and play classical music.',
   category: 'Music',
-  taught_by: 'Jimothy',
   start_date: Date.today,
   end_date: Date.tomorrow,
-  user: @johnson_student
+  teacher: @jimothy_teacher,
+  student: @johnson_student
 )
 @guitar1 = Course.create!(
   name: 'Guitar 101',
   description: 'Learn about guitar and play some pop tunes.',
   category: 'Music',
-  taught_by: 'Jimothy',
   start_date: Date.today,
   end_date: Date.tomorrow,
-  user: @johnson_student
+  teacher: @jimothy_teacher,
+  student: @adult_student
 )
 
 5.times { 

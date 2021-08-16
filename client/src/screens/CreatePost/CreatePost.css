@@ -41,12 +41,11 @@
   padding: 5px;
   min-height: 10rem;
 }
-.buttons * {
+.create-post-buttons * {
   color: white;
 }
-.buttons > button {
+.create-post-buttons > button {
   font-size: 1.5rem;
-  box-sizing: content-box;
   width: 50%;
   border: none;
   background-color: #aa968a;
@@ -56,6 +55,6 @@
   padding: 10px 0;
   border-top: 1px solid white;
 }
-.buttons > :first-child {
+.create-post-buttons > :first-child {
   border-right: 1px solid white;
 }

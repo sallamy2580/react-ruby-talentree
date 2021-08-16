@@ -5,6 +5,11 @@ export const getUser = async (id) => {
   return res.data;
 };
 
+export const getTeachers = async () => {
+  const res = await api.get(`/teachers`);
+  return res.data;
+};
+
 export const register = async (user) => {
   const res = await api.post(`/users`, { user });
   const { token } = res.data;

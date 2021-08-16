@@ -7,6 +7,11 @@ class UsersController < ApplicationController
 
     render json: @users, include: :posts, status: :ok
   end
+  
+  def teachers
+    @teachers = User.select(:id,:username, :email, :bio, :img_url, :is_teacher).where("is_teacher = true")
+    render json: @teachers
+  end
 
   # GET /users/1
   def show

@@ -46,6 +46,30 @@
   border-radius: 50px;
 }
 
+.post-buttons {
+  display: flex;
+}
+
+.post-buttons * {
+  color: white;
+}
+
+.post-buttons > button {
+  font-size: 1.5rem;
+  width: 50%;
+  border: none;
+  background-color: #aa968a;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 0;
+  border-top: 1px solid white;
+  cursor: pointer;
+}
+.post-buttons > :first-child {
+  border-right: 1px solid white;
+}
+
 .delete-confirm {
   display: none;
   position: fixed;
@@ -80,7 +104,7 @@
   font-weight: bold;
   border-radius: 7px;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.25s ease-out;
 }
 
 .delete-buttons > button:hover {

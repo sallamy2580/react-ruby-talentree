@@ -1,9 +1,13 @@
 .course {
   background-color: #4b7f52;
   color: white;
-  width: 200px;
+  width: 300px;
   padding: 20px;
   margin: 20px;
   display: flex;
   flex-direction: column;
+  border-radius: 7px;
+}
+.course h3 {
+  color: #d0baad;
 }

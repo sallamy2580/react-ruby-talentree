@@ -1,27 +1,26 @@
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { getCourses } from "../../services/courses";
-import { editPost } from "../../services/posts";
+import { getPost, editPost } from "../../services/posts";
 import "./EditPost.css";
 
 const EditPost = ({ userData }) => {
   const history = useHistory();
+  const params = useParams();
+  const { id } = params;
 
   const [courses, setCourses] = useState([]);
-  const [post, setPost] = useState({
-    media_url: "",
-    content: "",
-    course_id: 1,
-    user_id: userData.id,
-  });
+  const [post, setPost] = useState({});
 
   useEffect(() => {
-    const fetchCourses = async () => {
-      const data = await getCourses();
-      setCourses(data);
+    const fetchPostAndCourses = async () => {
+      const postData = await getPost(id);
+      setPost(postData);
+      const courseData = await getCourses();
+      setCourses(courseData);
     };
-    fetchCourses();
-  }, []);
+    fetchPostAndCourses();
+  }, [id]);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -38,7 +37,7 @@ const EditPost = ({ userData }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await editPost(post);
+    await editPost(id, post);
     setTimeout(() => {
       history.push("/");
     }, 500);
@@ -47,7 +46,7 @@ const EditPost = ({ userData }) => {
   return (
     <main id="edit-post">
       <form className="edit-post-form" onSubmit={handleSubmit}>
-        <h2>NEW POST</h2>
+        <h2>EDIT POST</h2>
         <input
           type="text"
           name="media_url"
@@ -77,7 +76,7 @@ const EditPost = ({ userData }) => {
         </select>
         <div className="buttons">
           <button onClick={handleClick}>Cancel</button>
-          <button type="submit">Create</button>
+          <button type="submit">Edit</button>
         </div>
       </form>
     </main>

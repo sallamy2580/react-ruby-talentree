@@ -22,25 +22,31 @@ function App() {
     };
     setAuthorized(reverify());
   }, []);
-  return authorized ? (
+  return (
     <div className="App">
       <Switch>
         <Route exact path="/login">
-          <LogIn setUserData={setUserData} />
+          {authorized ? (
+            <Redirect to="/" />
+          ) : (
+            <LogIn setUserData={setUserData} />
+          )}
         </Route>
         <Route exact path="/register">
-          <Register setUserData={setUserData} />
+          {authorized ? (
+            <Redirect to="/" />
+          ) : (
+            <Register setUserData={setUserData} />
+          )}
         </Route>
         <Route exact path="/logout">
           <LogOut />
         </Route>
         <Route>
-          <Main userData={userData} />
+          {authorized ? <Main userData={userData} /> : <Redirect to="/login" />}
         </Route>
       </Switch>
     </div>
-  ) : (
-    <Redirect to="/login" />
   );
 }
 
