@@ -48,7 +48,9 @@ const Register = (props) => {
     };
     createUser();
   };
-
+  if (typeof userData !== "undefined") {
+    history.push("/");
+  }
   return (
     <div className="login-register">
       <section className="login-register-heading">

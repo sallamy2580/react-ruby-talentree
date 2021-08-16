@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import LogIn from "./screens/LogIn/LogIn";
 import Register from "./screens/Register/Register";
 import "./App.css";
@@ -26,24 +26,16 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/login">
-          {authorized ? (
-            <Redirect to="/" />
-          ) : (
-            <LogIn setUserData={setUserData} />
-          )}
+          <LogIn userData={userData} setUserData={setUserData} />
         </Route>
         <Route exact path="/register">
-          {authorized ? (
-            <Redirect to="/" />
-          ) : (
-            <Register setUserData={setUserData} />
-          )}
+          <Register userData={userData} setUserData={setUserData} />
         </Route>
         <Route exact path="/logout">
           <LogOut />
         </Route>
         <Route>
-          {authorized ? <Main userData={userData} /> : <Redirect to="/login" />}
+          <Main userData={userData} />
         </Route>
       </Switch>
     </div>
