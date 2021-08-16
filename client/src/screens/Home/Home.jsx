@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
 import Post from "../../components/Post/Post";
 import { getPosts } from "../../services/posts";
@@ -14,9 +14,7 @@ const Home = ({ userData }) => {
     };
     fetchPosts();
   }, [toggleFetch]);
-  if (typeof userData === "undefined") {
-    return <Redirect to="/login" />;
-  }
+
   return (
     <main id="home">
       <section className="posts">

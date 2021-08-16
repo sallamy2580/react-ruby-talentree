@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { register } from "../../services/users";
 import "./Register.css";
-const Register = (props) => {
-  const { setUserData } = props;
+const Register = ({ authorized, setUserData }) => {
   const history = useHistory();
   const [user, setUser] = useState({
     username: "",
@@ -48,9 +47,7 @@ const Register = (props) => {
     };
     createUser();
   };
-  if (typeof userData !== "undefined") {
-    history.push("/");
-  }
+
   return (
     <div className="login-register">
       <section className="login-register-heading">

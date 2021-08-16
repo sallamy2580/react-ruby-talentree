@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Home from "../../screens/Home/Home";
 import Browse from "../../screens/Browse/Browse";
 import CreatePost from "../../screens/CreatePost/CreatePost";
@@ -8,6 +8,10 @@ import TeacherProfile from "../../screens/TeacherProfile/TeacherProfile";
 import Layout from "../Layout/Layout";
 
 const Main = ({ userData }) => {
+  if (typeof userData === "undefined") {
+    return <Redirect to="/login" />;
+  }
+
   return (
     <div>
       <Layout>

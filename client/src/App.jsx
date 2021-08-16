@@ -26,10 +26,10 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/login">
-          <LogIn userData={userData} setUserData={setUserData} />
+          <LogIn authorized={authorized} setUserData={setUserData} />
         </Route>
         <Route exact path="/register">
-          <Register userData={userData} setUserData={setUserData} />
+          <Register authorized={authorized} setUserData={setUserData} />
         </Route>
         <Route exact path="/logout">
           <LogOut />

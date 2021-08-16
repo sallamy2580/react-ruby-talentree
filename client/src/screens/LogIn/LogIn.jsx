@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { login } from "../../services/users";
 import "./LogIn.css";
-const LogIn = ({ userData, setUserData }) => {
+const LogIn = ({ authorized, setUserData }) => {
   const history = useHistory();
 
   const [user, setUser] = useState({
@@ -32,9 +32,6 @@ const LogIn = ({ userData, setUserData }) => {
     createUser();
   };
 
-  if (typeof userData !== "undefined") {
-    history.push("/");
-  }
   return (
     <div className="login-register">
       <section className="login-register-heading">
