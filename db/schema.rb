@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_200912) do
+ActiveRecord::Schema.define(version: 2021_08_17_183338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_200912) do
     t.string "username"
     t.string "email"
     t.text "bio"
-    t.string "img_url"
+    t.string "img_url", default: "https://res.cloudinary.com/dszox5xnw/image/upload/v1629222245/TalenTree/NoUserImage_uzwprl.png"
     t.string "password_digest"
     t.boolean "is_teacher"
     t.datetime "created_at", precision: 6, null: false

@@ -66,6 +66,7 @@ User.destroy_all
   teacher: @jenedict_teacher,
   student: @adult_student
 )
+
 @piano1 = Course.create!(
   name: 'Piano 101',
   description: 'Learn about piano technique and play classical music.',

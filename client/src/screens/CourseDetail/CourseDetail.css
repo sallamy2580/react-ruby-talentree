@@ -30,6 +30,7 @@
   border: none;
   border-radius: 7px;
   width: 100px;
+  cursor: pointer;
 }
 
 .course-card-header {

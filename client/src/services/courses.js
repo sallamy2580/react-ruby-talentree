@@ -14,3 +14,12 @@ export const createCourse = async (course) => {
   const res = await api.post(`/courses`, { course });
   return res.data;
 };
+
+export const editCourse = async (id, course) => {
+  const res = await api.put(`/courses/${id}`, { course });
+  return res.data;
+};
+
+export const deleteCourse = async (id) => {
+  await api.delete(`/courses/${id}`);
+};

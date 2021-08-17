@@ -25,7 +25,7 @@ const Home = ({ userData }) => {
   return (
     <main id="home">
       <section className="posts">
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <Post
             key={post?.id}
             post={post}
@@ -34,7 +34,7 @@ const Home = ({ userData }) => {
           />
         ))}
       </section>
-      {userData.is_teacher ? (
+      {userData?.is_teacher ? (
         <button className="new-post-link" onClick={handleClick}>
           <AiOutlinePlus />
         </button>

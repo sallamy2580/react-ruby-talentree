@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getCourse } from "../../services/courses";
+import { useHistory, useParams } from "react-router-dom";
+import { getCourse, editCourse, deleteCourse } from "../../services/courses";
+import RegisterConfirmation from "../RegisterConfirmation/RegisterConfirmation";
+
 import "./CourseDetail.css";
 
 const CourseDetail = ({ userData }) => {
   const params = useParams();
+  const history = useHistory();
   const [course, setCourse] = useState({});
+  const [registered, setRegistered] = useState(false);
   useEffect(() => {
     const fetchCourses = async () => {
       const data = await getCourse(params.id);
@@ -14,7 +18,24 @@ const CourseDetail = ({ userData }) => {
     fetchCourses();
   }, [params.id]);
 
-  return (
+  const handleRegister = async () => {
+    await editCourse(params.id, {
+      ...course,
+      student_id: userData?.id,
+    });
+    setRegistered(true);
+  };
+
+  const handleDelete = async () => {
+    await deleteCourse(params.id);
+    setTimeout(() => {
+      history.push("/browse");
+    }, 500);
+  };
+
+  return registered ? (
+    <RegisterConfirmation courseName={course?.name} />
+  ) : (
     <main id="course-detail">
       <article className="course-card">
         <div className="course-card-header">
@@ -34,11 +55,11 @@ const CourseDetail = ({ userData }) => {
         </div>
         <div className="buttons">
           {!userData?.is_teacher && course?.student_id === null ? (
-            <button>Register</button>
+            <button onClick={handleRegister}>Register</button>
           ) : course.teacher_id === userData?.id ? (
             <>
               <button>Edit</button>
-              <button>Delete</button>
+              <button onClick={handleDelete}>Delete</button>
             </>
           ) : (
             <></>

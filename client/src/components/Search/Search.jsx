@@ -14,12 +14,14 @@ const Search = ({ setDisplayArray, courses, teachers }) => {
   return (
     <div className="browse-search">
       <h2>Search</h2>
-      <select name="search_type" id="search-type" onChange={handleChange}>
-        <option value="all">All</option>
-        <option value="teachers">Teachers</option>
-        <option value="courses">Courses</option>
-      </select>
-      <input type="text" />
+      <div className="search-bar">
+        <select name="search_type" id="search-type" onChange={handleChange}>
+          <option value="all">All</option>
+          <option value="teachers">Teachers</option>
+          <option value="courses">Courses</option>
+        </select>
+        <input type="text" />
+      </div>
     </div>
   );
 };

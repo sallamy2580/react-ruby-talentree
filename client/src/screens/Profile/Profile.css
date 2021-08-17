@@ -46,6 +46,24 @@
   margin: 10px 0;
 }
 
+.profile .user-info-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.profile .user-info-buttons > * {
+  font-size: 1.5rem;
+  width: fit-content;
+  border: none;
+  background-color: #aa968a;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
 .profile .user-stats {
   text-align: center;
 }

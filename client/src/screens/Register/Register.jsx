@@ -22,7 +22,6 @@ const Register = ({ authorized, setUserData }) => {
   const handleClick = (e) => {
     const { name } = e.target;
     e.preventDefault();
-    console.log(name);
     if (name === "student" && user.is_teacher) {
       setUser({
         ...user,

@@ -17,6 +17,10 @@ const Main = ({ userData, setUserData }) => {
     const reverify = async () => {
       try {
         const currUser = await verify();
+        if (currUser.img_url === null) {
+          currUser.img_url =
+            "https://res.cloudinary.com/dszox5xnw/image/upload/v1629222245/TalenTree/NoUserImage_uzwprl.png";
+        }
         setUserData(currUser);
         return true;
       } catch (error) {

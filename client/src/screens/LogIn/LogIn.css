@@ -31,6 +31,7 @@
   margin-bottom: 20px;
   border: 1px solid #707070;
   border-radius: 7px;
+  padding: 5px;
 }
 .login-register-form button {
   font-size: 1.5rem;
@@ -42,4 +43,23 @@
 
 .login-register-link {
   color: #aa968a;
+}
+
+@media screen and (max-width: 900px) {
+  .login-register {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .login-register-heading {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .login-register-heading > h1 {
+    font-size: 6rem;
+  }
+  .login-register-heading > h5 {
+    font-size: 2rem;
+  }
 }

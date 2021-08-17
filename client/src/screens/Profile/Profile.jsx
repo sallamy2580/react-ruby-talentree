@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Post from "../../components/Post/Post";
 import { getUserPosts } from "../../services/users";
 import "./Profile.css";
@@ -14,8 +15,8 @@ const Profile = ({ userData }) => {
       };
       fetchPosts();
     }
-  }, [userData.id, toggleFetch]);
-  return (
+  }, [userData?.id, toggleFetch]);
+  return userData ? (
     <main className="profile">
       <section className="user-info">
         <div className="user-info-image">
@@ -31,22 +32,32 @@ const Profile = ({ userData }) => {
             <h5>POSTS</h5>
             <h2>{userPosts?.length}</h2>
           </div>
+          <div className="user-info-buttons">
+            <button>Edit Profile</button>
+            <Link to="/logout">Log Out</Link>
+          </div>
         </div>
       </section>
       {/* <h2>COURSES</h2>
       <section className="user-courses"></section> */}
       <h2>POSTS</h2>
       <section className="user-posts">
-        {userPosts?.map((post) => (
-          <Post
-            key={post.id}
-            post={post}
-            userId={userData?.id}
-            setToggleFetch={setToggleFetch}
-          />
-        ))}
+        {userPosts?.length ? (
+          userPosts?.map((post) => (
+            <Post
+              key={post.id}
+              post={post}
+              userId={userData?.id}
+              setToggleFetch={setToggleFetch}
+            />
+          ))
+        ) : (
+          <h4>No posts yet.</h4>
+        )}
       </section>
     </main>
+  ) : (
+    <h1>Loading...</h1>
   );
 };
 

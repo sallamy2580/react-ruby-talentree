@@ -1,7 +1,11 @@
 # Have multiple foreign keys point to same user table.
 # Info cited from:
 # https://stackoverflow.com/questions/2166613/multiple-foreign-keys-referencing-the-same-table-in-ror
+
+# Also made student optional so that at first, it will 
+# be an "open class" that a student can find and 
+# register for
 class Course < ApplicationRecord
-  has_one :student, :class_name => 'User'
+  belongs_to :student, :class_name => 'User', optional: true
   belongs_to :teacher, :class_name => 'User'
 end
