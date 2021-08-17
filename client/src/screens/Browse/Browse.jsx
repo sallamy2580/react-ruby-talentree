@@ -9,6 +9,7 @@ import "./Browse.css";
 const Browse = (props) => {
   const [courses, setCourses] = useState([]);
   const [teachers, setTeachers] = useState([]);
+  const [valuesArray, setValuesArray] = useState([]);
   const [displayArray, setDisplayArray] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -21,12 +22,14 @@ const Browse = (props) => {
   }, []);
 
   useEffect(() => {
+    setValuesArray(courses.concat(teachers));
     setDisplayArray(courses.concat(teachers));
   }, [courses, teachers]);
   return (
     <main>
       <Search
         setDisplayArray={setDisplayArray}
+        valuesArray={valuesArray}
         courses={courses}
         teachers={teachers}
       />
