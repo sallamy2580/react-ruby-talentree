@@ -20,6 +20,11 @@ const CourseDetail = ({ userData }) => {
       <h4>Taught by {course?.teacher?.username}</h4>
       {!userData?.is_teacher && course?.student_id === null ? (
         <button>Register</button>
+      ) : course.teacher_id === userData?.id ? (
+        <>
+          <button>Edit</button>
+          <button>Delete</button>
+        </>
       ) : (
         <></>
       )}
