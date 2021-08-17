@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Post from "../../components/Post/Post";
-import { getUser } from "../../services/users";
-const TeacherProfile = () => {
+import { getUser, getUserPosts } from "../../services/users";
+
+const TeacherProfile = ({ userData }) => {
   const params = useParams();
   const [user, setUser] = useState({});
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchUserInfo = async () => {
-      const userData = await getUser(params.id);
-      setUser(userData);
+      const teacherData = await getUser(params.id);
+      setUser(teacherData);
+      const postsData = await getUserPosts(params.id);
+      setPosts(postsData);
     };
     fetchUserInfo();
   }, [params.id]);
@@ -27,15 +31,16 @@ const TeacherProfile = () => {
           <p>{user?.bio}</p>
           <div className="user-stats">
             <h5>POSTS</h5>
-            <h2>{user?.posts?.length}</h2>
+            <h2>{posts?.length}</h2>
           </div>
         </div>
       </section>
       <section className="user-posts">
         <h2>POSTS</h2>
-        {user?.posts?.map((post) => (
-          <Post key={post.id} post={post} userId={user?.id} />
-        ))}
+        {posts?.map((post) => {
+          post.user = user;
+          return <Post key={post.id} post={post} userId={userData?.id} />;
+        })}
       </section>
     </main>
   );

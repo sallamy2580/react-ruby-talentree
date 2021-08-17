@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorize_request, only: [:verify]
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :userPosts]
   # GET /users
   def index
     @users = User.select(:id,:username, :email, :bio, :img_url, :is_teacher)

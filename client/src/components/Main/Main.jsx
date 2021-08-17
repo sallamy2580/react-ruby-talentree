@@ -7,8 +7,25 @@ import Profile from "../../screens/Profile/Profile";
 import TeacherProfile from "../../screens/TeacherProfile/TeacherProfile";
 import Layout from "../Layout/Layout";
 import CreateCourse from "../../screens/CreateCourse/CreateCourse";
+import { useEffect } from "react";
+import { verify } from "../../services/users";
 
-const Main = ({ userData }) => {
+import CourseDetail from "../../screens/CourseDetail/CourseDetail";
+
+const Main = ({ userData, setUserData }) => {
+  useEffect(() => {
+    const reverify = async () => {
+      try {
+        const currUser = await verify();
+        setUserData(currUser);
+        return true;
+      } catch (error) {
+        return false;
+      }
+    };
+    reverify();
+  }, [setUserData]);
+
   if (typeof userData === "undefined") {
     return <Redirect to="/login" />;
   }
@@ -26,16 +43,19 @@ const Main = ({ userData }) => {
           <Route exact path="/new">
             <CreatePost userData={userData} />
           </Route>
-          <Route path="/edit/:id">
+          <Route exact path="/edit/:id">
             <EditPost userData={userData} />
           </Route>
           <Route exact path="/profile">
             <Profile userData={userData} />
           </Route>
-          <Route exact path="/teacher/new">
+          <Route exact path="/course/new">
             <CreateCourse userData={userData} />
           </Route>
-          <Route path="/teacher/:id">
+          <Route exact path="/course/:id">
+            <CourseDetail userData={userData} />
+          </Route>
+          <Route exact path="/teacher/:id">
             <TeacherProfile userData={userData} />
           </Route>
         </Switch>

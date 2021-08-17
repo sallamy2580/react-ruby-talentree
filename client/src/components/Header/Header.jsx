@@ -16,7 +16,7 @@ const Header = () => {
       <section>
         <h1>
           <img
-            src="img/talentree-student-logo.png"
+            src="https://res.cloudinary.com/dszox5xnw/image/upload/v1629207883/TalenTree/talentree-student-logo_qflynd.png"
             alt="Talentree Student Logo"
           />
           TalenTree

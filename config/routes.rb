@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/users/verify", to: "users#verify"
   get "/teachers", to: "users#teachers"
   resources :users, only: [:index, :show, :create]
+  get "/users/:id/posts", to: "posts#userPosts" 
   
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

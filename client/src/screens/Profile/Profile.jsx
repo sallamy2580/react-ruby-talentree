@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Post from "../../components/Post/Post";
-import { getPosts } from "../../services/posts";
+import { getUserPosts } from "../../services/users";
 import "./Profile.css";
 
 const Profile = ({ userData }) => {
@@ -8,9 +8,8 @@ const Profile = ({ userData }) => {
   const [toggleFetch, setToggleFetch] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
-      const data = await getPosts();
-      const newPosts = data.filter((post) => post.user.id === userData.id);
-      setUserPosts(newPosts);
+      const data = await getUserPosts(userData?.id);
+      setUserPosts(data);
     };
     fetchPosts();
   }, [userData.id, toggleFetch]);
@@ -31,6 +30,9 @@ const Profile = ({ userData }) => {
             <h2>{userPosts?.length}</h2>
           </div>
         </div>
+      </section>
+      <section className="user-courses">
+        <h2>COURSES</h2>
       </section>
       <section className="user-posts">
         <h2>POSTS</h2>

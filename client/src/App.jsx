@@ -10,6 +10,7 @@ import LogOut from "./screens/LogOut/LogOut";
 function App() {
   const [authorized, setAuthorized] = useState(null);
   const [userData, setUserData] = useState({});
+
   useEffect(() => {
     const reverify = async () => {
       try {
@@ -35,7 +36,7 @@ function App() {
           <LogOut />
         </Route>
         <Route>
-          <Main userData={userData} />
+          <Main userData={userData} setUserData={setUserData} />
         </Route>
       </Switch>
     </div>

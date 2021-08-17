@@ -13,7 +13,7 @@ const Home = ({ userData }) => {
   useEffect(() => {
     const fetchPosts = async () => {
       const data = await getPosts();
-      setPosts(data);
+      setPosts(data.reverse());
     };
     fetchPosts();
   }, [toggleFetch]);
@@ -46,7 +46,7 @@ const Home = ({ userData }) => {
       <div className={`show-options${showOptions ? " show" : ""}`}>
         <div className="options-box">
           <div className="options-links">
-            <Link to="/teacher/new">
+            <Link to="/course/new">
               {" "}
               <HiOutlineUserGroup />
               &nbsp;Course
