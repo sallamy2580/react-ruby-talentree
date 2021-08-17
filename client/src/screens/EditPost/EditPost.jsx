@@ -10,7 +10,12 @@ const EditPost = ({ userData }) => {
   const { id } = params;
 
   const [courses, setCourses] = useState([]);
-  const [post, setPost] = useState({});
+  const [post, setPost] = useState({
+    media_url: "",
+    content: "",
+    course_id: 1,
+    user_id: userData.id,
+  });
 
   useEffect(() => {
     const fetchPostAndCourses = async () => {
