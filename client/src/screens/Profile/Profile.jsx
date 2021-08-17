@@ -7,14 +7,16 @@ const Profile = ({ userData }) => {
   const [userPosts, setUserPosts] = useState([]);
   const [toggleFetch, setToggleFetch] = useState([]);
   useEffect(() => {
-    const fetchPosts = async () => {
-      const data = await getUserPosts(userData?.id);
-      setUserPosts(data);
-    };
-    fetchPosts();
+    if (userData?.id) {
+      const fetchPosts = async () => {
+        const data = await getUserPosts(userData?.id);
+        setUserPosts(data);
+      };
+      fetchPosts();
+    }
   }, [userData.id, toggleFetch]);
   return (
-    <main id="profile">
+    <main className="profile">
       <section className="user-info">
         <div className="user-info-image">
           <img src={userData?.img_url} alt={userData?.username} />
@@ -31,11 +33,10 @@ const Profile = ({ userData }) => {
           </div>
         </div>
       </section>
-      <section className="user-courses">
-        <h2>COURSES</h2>
-      </section>
+      {/* <h2>COURSES</h2>
+      <section className="user-courses"></section> */}
+      <h2>POSTS</h2>
       <section className="user-posts">
-        <h2>POSTS</h2>
         {userPosts?.map((post) => (
           <Post
             key={post.id}

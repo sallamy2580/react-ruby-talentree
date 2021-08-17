@@ -49,6 +49,11 @@ header > nav {
   padding: 10px;
   transition: all 0.5s ease-out;
 }
+
+.profile-nav {
+  display: none;
+}
+
 .profile-link-text h3 {
   font-size: 1.5rem;
 }
@@ -67,4 +72,19 @@ header > nav {
 
 .profile-link:hover {
   background-color: rgba(0, 0, 0, 0.277);
+}
+
+@media screen and (max-width: 900px) {
+  .profile-nav {
+    display: block;
+  }
+  .profile-header {
+    display: none;
+  }
+  header {
+    align-items: center;
+  }
+  header > nav {
+    width: 100%;
+  }
 }

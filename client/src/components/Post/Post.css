@@ -1,7 +1,7 @@
 .post {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  max-width: 600px;
   margin: 20px;
   background-color: #4b7f52;
   color: white;

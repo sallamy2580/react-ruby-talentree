@@ -16,9 +16,9 @@ const TeacherProfile = ({ userData }) => {
     };
     fetchUserInfo();
   }, [params.id]);
-  console.log(user);
+
   return (
-    <main id="profile">
+    <main className="profile">
       <section className="user-info">
         <div className="user-info-image">
           <img src={user?.img_url} alt={user?.username} />
@@ -35,8 +35,8 @@ const TeacherProfile = ({ userData }) => {
           </div>
         </div>
       </section>
+      <h2>POSTS</h2>
       <section className="user-posts">
-        <h2>POSTS</h2>
         {posts?.map((post) => {
           post.user = user;
           return <Post key={post.id} post={post} userId={userData?.id} />;

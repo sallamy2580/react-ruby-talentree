@@ -23,7 +23,7 @@ const Header = () => {
         </h1>
         <NavLink
           activeClassName="active-profile"
-          className="profile-link"
+          className="profile-link profile-header"
           to="/profile"
         >
           <img src={userData?.img_url} alt={userData?.username} />
@@ -39,6 +39,9 @@ const Header = () => {
         </NavLink>
         <NavLink className="nav-link" to="/browse">
           Browse
+        </NavLink>
+        <NavLink className="nav-link profile-nav" to="/profile">
+          Profile
         </NavLink>
       </nav>
     </header>
