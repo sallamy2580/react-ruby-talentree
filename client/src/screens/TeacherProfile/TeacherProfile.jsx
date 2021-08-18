@@ -39,7 +39,7 @@ const TeacherProfile = ({ userData }) => {
       <section className="user-posts">
         {posts?.length ? (
           posts?.map((post) => (
-            <Post key={post.id} post={post} userId={user?.id} />
+            <Post key={post.id} post={post} userId={userData?.id} />
           ))
         ) : (
           <h4>No posts yet.</h4>

@@ -2,36 +2,59 @@ import { useState } from "react";
 import "./Search.css";
 const Search = ({ setDisplayArray, valuesArray, courses, teachers }) => {
   const [input, setInput] = useState("");
+  const [searchType, setSearchType] = useState("all");
   const handleDropdownChange = (e) => {
     const { value } = e.target;
-    if (value === "all") {
-      setDisplayArray(valuesArray);
-    } else if (value === "teachers") {
-      setDisplayArray(teachers);
-    } else {
-      setDisplayArray(courses);
-    }
+    setSearchType(value);
+
+    const newArray =
+      value === "all"
+        ? [...valuesArray]
+        : value === "teachers"
+        ? [...teachers]
+        : [...courses];
+
+    setDisplayArray(
+      newArray.filter((card) =>
+        input === ""
+          ? true
+          : card.username !== undefined
+          ? card?.username?.toLowerCase().includes(input.toLowerCase())
+          : card?.name?.toLowerCase().includes(input.toLowerCase())
+      )
+    );
   };
 
   const handleInputChange = (e) => {
     e.preventDefault();
-    setInput(e.target.value);
+    const { value } = e.target;
+    setInput(value);
+
     setDisplayArray(
-      valuesArray.filter((card) =>
-        card.username !== undefined
-          ? card?.username?.toLowerCase().includes(e.target.value.toLowerCase())
-          : card?.name?.toLowerCase().includes(e.target.value.toLowerCase())
-      )
+      valuesArray
+        .filter((card) =>
+          card.username !== undefined
+            ? card?.username?.toLowerCase().includes(value.toLowerCase())
+            : card?.name?.toLowerCase().includes(value.toLowerCase())
+        )
+        .filter((card) =>
+          searchType === "teachers"
+            ? teachers.includes(card)
+            : searchType === "courses"
+            ? courses.includes(card)
+            : true
+        )
     );
   };
 
   return (
     <div className="browse-search">
       <h2>Search</h2>
-      <div className="search-bar">
+      <form className="search-bar">
         <select
           name="search_type"
           id="search-type"
+          value={searchType}
           onChange={handleDropdownChange}
         >
           <option value="all">All</option>
@@ -39,7 +62,7 @@ const Search = ({ setDisplayArray, valuesArray, courses, teachers }) => {
           <option value="courses">Courses</option>
         </select>
         <input type="text" value={input} onChange={handleInputChange} />
-      </div>
+      </form>
     </div>
   );
 };

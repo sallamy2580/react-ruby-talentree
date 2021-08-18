@@ -6,7 +6,7 @@ import { getCourses } from "../../services/courses";
 import { getTeachers } from "../../services/users";
 import "./Browse.css";
 
-const Browse = (props) => {
+const Browse = () => {
   const [courses, setCourses] = useState([]);
   const [teachers, setTeachers] = useState([]);
   const [valuesArray, setValuesArray] = useState([]);
@@ -25,6 +25,7 @@ const Browse = (props) => {
     setValuesArray(courses.concat(teachers));
     setDisplayArray(courses.concat(teachers));
   }, [courses, teachers]);
+
   return (
     <main>
       <Search
