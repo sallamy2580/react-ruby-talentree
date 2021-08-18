@@ -16,7 +16,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # Student.destroy_all
 
-require 'faker'
 Post.destroy_all
 Course.destroy_all
 User.destroy_all
@@ -30,87 +29,98 @@ User.destroy_all
   is_teacher: true
 )
 
-@jenedict_teacher = User.create!(
-  username: 'jenedictcumberbatch',
-  email: 'jenedict@yahoo.com',
-  bio: 'I go well with eggs',
-  img_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cobra-k-1526581667.jpg?resize=480:*',
-  password: 'eggsjenedict_and_moolah',
+@peppapig = User.create!(
+  username: 'peppapig',
+  email: 'peppapig@gmail.com',
+  bio: 'I have no idea how to whistle but I make some fire beats.',
+  img_url: 'https://i.guim.co.uk/img/media/7a0ccba31578833efe0de8db130e57015109d067/183_0_3840_2304/master/3840.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=3b95b4d4869e595a2cebff6be1c24eac',
+  password: 'canyouwhistle',
   is_teacher: true
 )
 
-@johnson_student = User.create!(
-  username: 'johnsonandpfizer',
-  email: 'johnson@john.son',
-  bio: 'I just love Juicy Drop Pops.',
-  img_url: 'https://www.indiewire.com/wp-content/uploads/2018/06/02_CobraKai.jpg?w=780',
-  password: 'checkyourjohnson_and_moolah',
+@oldsonic = User.create!(
+  username: 'oldsonic',
+  email: 'oldsonic@sega.com',
+  bio: 'Come on everyone, I do NOT look THAT bad... right?',
+  img_url: 'https://cdn.vox-cdn.com/thumbor/MZ3nWO2Z5j2xnHQk1-v7nMn7e04=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/16208003/sonic.jpg',
+  password: 'olddesignbetter',
   is_teacher: false
 )
 
-@adult_student = User.create!(
-  username: 'adultperson',
-  email: 'adult@facebook.edu',
-  bio: 'I think I am the most adultest adult to be honest.',
-  img_url: 'https://costumewall.com/wp-content/uploads/2018/10/mr-miyagi.jpg',
-  password: 'adultperson_and_moolah',
+@greenmonster = User.create!(
+  username: 'greenmonster',
+  email: 'greenmonster@monstersvsaliens.edu',
+  bio: 'Yes I\'m the green monster from Monsters vs Aliens. No, I don\'t remember what my name was either.',
+  img_url: 'https://i.pinimg.com/originals/54/cf/32/54cf32a2b29960c67db19eda1560169d.jpg',
+  password: 'greenguyorsomething',
   is_teacher: false
 )
 
-@dance1 = Course.create!(
-  name: 'Dance 101',
-  description: 'Learn about dance and the choreography process.',
-  category: 'Dance',
+@telepathy = Course.create!(
+  name: 'Telepathy 101',
+  description: 'Learn how to communicate with just your mind.',
+  category: 'Superpower',
   start_date: Date.today,
   end_date: Date.tomorrow,
-  teacher: @jenedict_teacher,
-  student: @adult_student
+  teacher: @professorx,
+  student: @greenmonster
 )
 
-@piano1 = Course.create!(
-  name: 'Piano 101',
-  description: 'Learn about piano technique and play classical music.',
+@telekinesis = Course.create!(
+  name: 'Telekinesis 101',
+  description: 'Learn how to move sh*t with your mind.',
+  category: 'Superpower',
+  start_date: Date.today,
+  end_date: Date.tomorrow,
+  teacher: @professorx,
+  student: @oldsonic
+)
+
+@musicproduction = Course.create!(
+  name: 'Music Production 101',
+  description: 'Make straight fire on Day 1. Get calls from Eminem and Hannah Montana on Day 2.',
   category: 'Music',
   start_date: Date.today,
   end_date: Date.tomorrow,
-  teacher: @jimothy_teacher,
-  student: @johnson_student
-)
-@guitar1 = Course.create!(
-  name: 'Guitar 101',
-  description: 'Learn about guitar and play some pop tunes.',
-  category: 'Music',
-  start_date: Date.today,
-  end_date: Date.tomorrow,
-  teacher: @jimothy_teacher,
-  student: @adult_student
+  teacher: @peppapig,
+  student: nil
 )
 
 Post.create!(
-  user: @jimothy_teacher, 
-  course: @dance1,
-  media_url: 'https://i.ytimg.com/vi/Wr3wDQL9hOw/maxresdefault.jpg',
-  content: Faker::Lorem.paragraph
-)
-Post.create!(
-  user: @jenedict_teacher, 
-  course: @piano1,
-  media_url: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/182FA/production/_110866099_gettyimages-905799292.jpg',
-  content: Faker::Lorem.paragraph
-)
-Post.create!(
-  user: @johnson_student, 
-  course: @guitar1,
-  media_url: 'https://online.berklee.edu/takenote/wp-content/uploads/2020/07/learn_acoustic_blues_guitar_article_image.jpg',
-  content: Faker::Lorem.paragraph
-)
-Post.create!(
-  user: @adult_student, 
-  course: @dance1,
-  media_url: 'https://i.ytimg.com/vi/Wr3wDQL9hOw/maxresdefault.jpg',
-  content: Faker::Lorem.paragraph
+  user: @professorx, 
+  course: @telepathy,
+  media_url: 'https://i.ytimg.com/vi/_MbYGp2S5TM/hqdefault.jpg',
+  content: 'Super productive day today! For my Telepathy final exam, I told my student that Joe would be so proud telepathically. The idiot asked who Joe was! Of course, I failed him, don\'t worry, no student of mine is falling for the oldest trick in the book!'
 )
 
+
+Post.create!(
+  user: @oldsonic, 
+  course: @telekinesis,
+  media_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cobra-k-1526581667.jpg?resize=480:*',
+  content: 'Wow, interesting day today! Not much else to share...'
+)
+
+Post.create!(
+  user: @greenmonster, 
+  course: @telepathy,
+  media_url: 'https://c8.alamy.com/comp/DCJ3MM/close-up-shot-of-middle-aged-woman-crying-DCJ3MM.jpg',
+  content: 'Rough day today everyone. We used telepathy today to find a person on Earth who remembers what my name was in the Monsters vs Aliens movie. 7 billion people. Not a single person knew. Literally crying and shaking right now.'
+)
+
+Post.create!(
+  user: @peppapig, 
+  course: @musicproduction,
+  media_url: 'https://images.fatherly.com/wp-content/uploads/2019/07/peppa-pig-iggy.jpg?q=65&enable=upscale&w=600',
+  content: 'WOW! Amazing week. At the end of my last class, Hannah Montana (as promised) sprinted into my class (which was weird because it was a Zoom call) and said \'Hey I want to rap on that beat.\' Where else do you see results like this? Register for next round of classes to find out!'
+)
+
+Post.create!(
+  user: @professorx, 
+  course: @telekinesis,
+  media_url: 'https://c8.alamy.com/comp/F5KMEW/put-lettuce-on-bread-roll-making-hamburger-macro-series-312-F5KMEW.jpg',
+  content: 'Oh my god, I can\'t believe it! I\'m so proud of my student for completing the final exam: moving lettuce on bread (non-toasted). Tears started flowing from my face. If you want miracles like this, register for upcoming courses!'
+)
 
 puts "#{User.count} users created!"
 puts "#{Course.count} courses created!"
