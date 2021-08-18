@@ -22,14 +22,6 @@ const CreateCourse = ({ userData }) => {
     student_id: null,
   });
 
-  // useEffect(() => {
-  //   const fetchCourses = async () => {
-  //     const data = await getCourses();
-  //     setCourses(data);
-  //   };
-  //   fetchCourses();
-  // }, []);
-
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -52,7 +44,7 @@ const CreateCourse = ({ userData }) => {
   };
 
   return (
-    <main id="create-course">
+    <main className="create-course">
       <form className="create-course-form" onSubmit={handleSubmit}>
         <h2>NEW COURSE</h2>
         <input

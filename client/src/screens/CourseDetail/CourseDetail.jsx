@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { getCourse, editCourse, deleteCourse } from "../../services/courses";
 import RegisterConfirmation from "../RegisterConfirmation/RegisterConfirmation";
 
@@ -58,7 +58,7 @@ const CourseDetail = ({ userData }) => {
             <button onClick={handleRegister}>Register</button>
           ) : course.teacher_id === userData?.id ? (
             <>
-              <button>Edit</button>
+              <Link to={`/course/${course.id}/edit`}>Edit</Link>
               <button onClick={handleDelete}>Delete</button>
             </>
           ) : (

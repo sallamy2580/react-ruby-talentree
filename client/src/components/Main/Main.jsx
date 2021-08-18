@@ -8,6 +8,7 @@ import TeacherProfile from "../../screens/TeacherProfile/TeacherProfile";
 import Layout from "../Layout/Layout";
 import CreateCourse from "../../screens/CreateCourse/CreateCourse";
 import CourseDetail from "../../screens/CourseDetail/CourseDetail";
+import EditCourse from "../../screens/EditCourse/EditCourse";
 
 const Main = ({ userData }) => {
   if (typeof userData === "undefined") {
@@ -38,6 +39,9 @@ const Main = ({ userData }) => {
           </Route>
           <Route exact path="/course/:id">
             <CourseDetail userData={userData} />
+          </Route>
+          <Route exact path="/course/:id/edit">
+            <EditCourse userData={userData} />
           </Route>
           <Route exact path="/teacher/:id">
             <TeacherProfile userData={userData} />

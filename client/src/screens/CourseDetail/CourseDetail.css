@@ -21,7 +21,9 @@
   justify-content: space-evenly;
 }
 
-.course-card > .buttons > button {
+.course-card > .buttons > * {
+  text-align: center;
+  text-transform: uppercase;
   background-color: #aa968a;
   color: white;
   font-weight: bold;
