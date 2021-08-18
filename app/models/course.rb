@@ -6,6 +6,6 @@
 # be an "open class" that a student can find and 
 # register for
 class Course < ApplicationRecord
-  belongs_to :student, :class_name => 'User', optional: true
-  belongs_to :teacher, :class_name => 'User'
+  belongs_to :student, -> { select :username, :id, :img_url }, :class_name => 'User', optional: true
+  belongs_to :teacher, -> { select :username, :id, :img_url }, :class_name => 'User'
 end

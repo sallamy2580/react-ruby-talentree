@@ -15,6 +15,11 @@ export const getUserPosts = async (id) => {
   return res.data;
 };
 
+export const getUserCourses = async (id) => {
+  const res = await api.get(`/users/${id}/courses`);
+  return res.data;
+};
+
 export const register = async (user) => {
   const res = await api.post(`/users`, { user });
   const { token } = res.data;

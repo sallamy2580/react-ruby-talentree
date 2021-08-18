@@ -25,6 +25,15 @@ class CoursesController < ApplicationController
     end
   end
 
+  def user_courses
+    if User.find(params[:id]).is_teacher
+      @courses = Course.where(teacher_id: params[:id])
+    else
+      @courses = Course.where(student_id: params[:id])
+    end
+    render json: @courses, include: :teacher
+  end
+
   # PATCH/PUT /courses/1
   def update
     if @course.update(course_params)

@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import CourseCard from "../../components/CourseCard/CourseCard";
 import Post from "../../components/Post/Post";
-import { getUser, getUserPosts } from "../../services/users";
+import { getUser, getUserPosts, getUserCourses } from "../../services/users";
 
 const TeacherProfile = ({ userData }) => {
   const params = useParams();
   const [user, setUser] = useState({});
   const [posts, setPosts] = useState([]);
+  const [courses, setCourses] = useState([]);
   useEffect(() => {
     const fetchUserInfo = async () => {
       const teacherData = await getUser(params.id);
       setUser(teacherData);
       const postsData = await getUserPosts(params.id);
       setPosts(postsData);
+      const coursesData = await getUserCourses(params.id);
+      setCourses(coursesData);
     };
     fetchUserInfo();
   }, [params.id]);
@@ -35,6 +39,18 @@ const TeacherProfile = ({ userData }) => {
           </div>
         </div>
       </section>
+      <hr />
+      <h2>COURSES</h2>
+      <section className="user-courses">
+        {courses?.length ? (
+          courses?.map((course) => (
+            <CourseCard key={course.id} course={course} />
+          ))
+        ) : (
+          <h4>No courses yet.</h4>
+        )}
+      </section>
+      <hr />
       <h2>POSTS</h2>
       <section className="user-posts">
         {posts?.length ? (

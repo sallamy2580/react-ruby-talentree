@@ -8,11 +8,9 @@ class PostsController < ApplicationController
     render json: @posts, include: [:user, :course]
   end
 
-  def userPosts
-    def userPosts
-      @posts = User.find(params[:id]).posts
-      render json: @posts, include: [:user, :course]
-    end
+  def user_posts
+    @posts = User.find(params[:id]).posts
+    render json: @posts, include: [:user, :course]
   end
 
   # GET /posts/1
