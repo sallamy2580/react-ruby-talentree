@@ -33,7 +33,6 @@ const Profile = ({ userData }) => {
             <h2>{userPosts?.length}</h2>
           </div>
           <div className="user-info-buttons">
-            <button>Edit Profile</button>
             <Link to="/logout">Log Out</Link>
           </div>
         </div>

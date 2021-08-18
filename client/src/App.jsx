@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import LogIn from "./screens/LogIn/LogIn";
 import Register from "./screens/Register/Register";
 import "./App.css";
@@ -16,14 +16,15 @@ function App() {
       try {
         const currUser = await verify();
         setUserData(currUser);
-        return true;
+        setAuthorized(true);
       } catch (error) {
-        return false;
+        setAuthorized(false);
       }
     };
-    setAuthorized(reverify());
+    reverify();
   }, []);
-  return (
+
+  return authorized === true || authorized === false ? (
     <div className="App">
       <Switch>
         <Route exact path="/login">
@@ -36,10 +37,16 @@ function App() {
           <LogOut />
         </Route>
         <Route>
-          <Main userData={userData} setUserData={setUserData} />
+          {authorized ? (
+            <Main userData={userData} setUserData={setUserData} />
+          ) : (
+            <Redirect to="/login" />
+          )}
         </Route>
       </Switch>
     </div>
+  ) : (
+    <h1>Loading...</h1>
   );
 }
 

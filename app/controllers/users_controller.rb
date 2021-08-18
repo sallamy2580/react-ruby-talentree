@@ -79,7 +79,7 @@ class UsersController < ApplicationController
     # end
 
     def user_register_params
-      params.require(:user).permit(:username, :email, :password,:is_teacher)
+      params.require(:user).permit(:username, :email, :password,:is_teacher, :bio, :img_url)
     end
   
     def user_login_params

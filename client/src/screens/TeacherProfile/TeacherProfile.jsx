@@ -37,10 +37,13 @@ const TeacherProfile = ({ userData }) => {
       </section>
       <h2>POSTS</h2>
       <section className="user-posts">
-        {posts?.map((post) => {
-          post.user = user;
-          return <Post key={post.id} post={post} userId={userData?.id} />;
-        })}
+        {posts?.length ? (
+          posts?.map((post) => (
+            <Post key={post.id} post={post} userId={user?.id} />
+          ))
+        ) : (
+          <h4>No posts yet.</h4>
+        )}
       </section>
     </main>
   );

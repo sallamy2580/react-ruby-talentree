@@ -2,13 +2,15 @@ import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { register } from "../../services/users";
 import "./Register.css";
-const Register = ({ authorized, setUserData }) => {
+const Register = ({ setUserData }) => {
   const history = useHistory();
   const [user, setUser] = useState({
     username: "",
     email: "",
     password: "",
     is_teacher: false,
+    bio: "",
+    img_url: "",
   });
 
   const handleChange = (e) => {
@@ -62,6 +64,7 @@ const Register = ({ authorized, setUserData }) => {
           id="username"
           value={user.username}
           onChange={handleChange}
+          required
         />
         <label htmlFor="email">Email</label>
         <input
@@ -70,6 +73,7 @@ const Register = ({ authorized, setUserData }) => {
           id="email"
           value={user.email}
           onChange={handleChange}
+          required
         />
         <label htmlFor="password">Password</label>
         <input
@@ -77,6 +81,23 @@ const Register = ({ authorized, setUserData }) => {
           name="password"
           id="password"
           value={user.password}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="image">Profile Picture URL</label>
+        <input
+          type="text"
+          name="img_url"
+          id="image"
+          value={user.img_url}
+          onChange={handleChange}
+        />
+        <label htmlFor="bio">Bio</label>
+        <input
+          type="text"
+          name="bio"
+          id="bio"
+          value={user.bio}
           onChange={handleChange}
         />
         <div className="register-buttons">

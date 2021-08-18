@@ -5,7 +5,7 @@ const Search = ({ setDisplayArray, valuesArray, courses, teachers }) => {
   const handleDropdownChange = (e) => {
     const { value } = e.target;
     if (value === "all") {
-      setDisplayArray(courses.concat(teachers));
+      setDisplayArray(valuesArray);
     } else if (value === "teachers") {
       setDisplayArray(teachers);
     } else {
